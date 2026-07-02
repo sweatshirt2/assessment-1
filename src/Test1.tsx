@@ -3,15 +3,18 @@ import { useState } from "react";
 export default function Test1() {
   const [items, setItems] = useState([1, 2, 3]);
 
+  const sum = items.reduce((acc, item) => acc + item, 0);
+
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
       <div>
         {items.map((item) => (
           <span style={{ paddingRight: "20px" }}>{item}</span>
         ))}
-
-        {/* show sum here */}
       </div>
+
+      {/* show sum here */}
+      {sum}
 
       <button
         onClick={() =>
